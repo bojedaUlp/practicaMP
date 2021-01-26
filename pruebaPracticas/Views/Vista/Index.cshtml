@@ -1,0 +1,80 @@
+﻿@model IEnumerable<pruebaPracticas.Models.Auto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Auto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Año)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_Auto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Año)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Img1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Img2)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_Auto }) |
+                    @Html.ActionLink("crear", "Create", new {    }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Auto })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
